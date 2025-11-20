@@ -33,5 +33,8 @@ Spring AOP provides five kinds of Advice:
 
 
 Microservice Pattern & Architecture:	
-Services Communication:	
-📍Inter-Process Communication Types:	
+Services Communication:	  
+📍Inter-Process Communication Types:	  
+<img width="1210" height="708" alt="image" src="https://github.com/user-attachments/assets/d9cc4c38-0afb-432b-adda-4f649629e054" />
+
+
