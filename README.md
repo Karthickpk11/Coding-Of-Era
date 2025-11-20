@@ -31,3 +31,7 @@ Spring AOP provides five kinds of Advice:
 
 📍Weaving:	  
 
+
+Microservice Pattern & Architecture:	
+Services Communication:	
+📍Inter-Process Communication Types:	
