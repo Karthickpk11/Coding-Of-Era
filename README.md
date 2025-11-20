@@ -13,7 +13,11 @@ How to solve code scattering: Use Aspect-Oriented Programming (AOP), Modularize 
 📍Join Point:  
 In Spring AOP, Joinpoint refers to a candidate point in application where we can plug in an Aspect.
 Joinpoint can be a method or an exception or a field getting modified.
-This is the place where the code of an Aspect is inserted to add new behavior in the existing execution flow.
-📍Advice:	
-📍Aspect:	
-📍Weaving:	
+This is the place where the code of an Aspect is inserted to add new behavior in the existing execution flow.  
+
+📍Advice:	  
+
+📍Aspect:	  
+
+📍Weaving:	  
+
