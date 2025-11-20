@@ -21,11 +21,11 @@ An Advice is the code of cross cutting concern that gets executed.
 There are multiple types of Advice in Spring AOP.
 
 Spring AOP provides five kinds of Advice:	
-1. Before Advice: This type of advice runs just before a method executes. We can use @Before annotation for this.
-2. After (finally) Advice: This type of advice runs just after a method executes. Even if the method fails, this advice will run. We can use @After annotation here.
-3. After Returning Advice: This type of advice runs after a method executes successfully. @AfterReturning annotation can be used here.
-4. After Throwing Advice: This type of advice runs after a method executes and throws an exception. The annotation to be used is @AfterThrowing.
-5. Around Advice: This type of advice runs before and after the method is invoked. We use @Around annotation for this.
+1. Before Advice: This type of advice runs just before a method executes. We can use **@Before** annotation for this.
+2. After (finally) Advice: This type of advice runs just after a method executes. Even if the method fails, this advice will run. We can use **@After** annotation here.
+3. After Returning Advice: This type of advice runs after a method executes successfully. **@AfterReturning** annotation can be used here.
+4. After Throwing Advice: This type of advice runs after a method executes and throws an exception. The annotation to be used is **@AfterThrowing**.
+5. Around Advice: This type of advice runs before and after the method is invoked. We use **@Around** annotation for this.
 
 📍Aspect:	  
 
