@@ -6,11 +6,11 @@ SOLID is a set of five design principles that make software maintainable, scalab
 
 They are:
 
-S — Single Responsibility Principle (SRP)
-O — Open/Closed Principle (OCP)
-L — Liskov Substitution Principle (LSP)
-I — Interface Segregation Principle (ISP)
-D — Dependency Inversion Principle (DIP)
+S — Single Responsibility Principle (SRP)	
+O — Open/Closed Principle (OCP)		
+L — Liskov Substitution Principle (LSP)		
+I — Interface Segregation Principle (ISP)	
+D — Dependency Inversion Principle (DIP)	
 
 Let’s break them down.
 
@@ -26,7 +26,6 @@ class Invoice {
     void saveToDB() { }
 }
 
-
 This class calculates, prints, and saves — 3 responsibilities.
 
 ✔ Example (Good)
@@ -34,8 +33,8 @@ class InvoiceCalculator { }
 class InvoicePrinter { }
 class InvoiceRepository { }
 
-
 Each class has one responsibility → easier to maintain.
+
 
 2️⃣ Open/Closed Principle (OCP)
 
@@ -61,8 +60,8 @@ interface Payment {
 class UPIPayment implements Payment { ... }
 class CardPayment implements Payment { ... }
 
-
 Now you can add new payment types without modifying existing classes.
+
 
 3️⃣ Liskov Substitution Principle (LSP)
 
@@ -81,8 +80,8 @@ class Bird {
 
 class Sparrow extends Bird { }
 
-
 The child doesn’t violate the parent’s expected behavior.
+
 
 4️⃣ Interface Segregation Principle (ISP)
 
@@ -98,7 +97,6 @@ interface Machine {
     void fax();
 }
 
-
 A simple printer shouldn't implement scan or fax.
 
 ✔ Good example
@@ -109,8 +107,8 @@ interface Printer { void print(); }
 interface Scanner { void scan(); }
 interface Fax { void fax(); }
 
-
 Classes only implement what they actually need.
+
 
 5️⃣ Dependency Inversion Principle (DIP)
 
@@ -126,7 +124,6 @@ class Notification {
     EmailService emailService = new EmailService();
 }
 
-
 Use abstraction:
 
 interface MessageService {
@@ -140,8 +137,8 @@ class Notification {
     Notification(MessageService service) { this.service = service; }
 }
 
-
 This allows using Email, SMS, Push, etc. → improves testability and flexibility.
+
 
 📍Code Tangling:  
 Code tangling is the mixing of unrelated functions or concerns within a single piece of code, leading to tight coupling and decreased modularity. It occurs when multiple responsibilities, such as business logic, security, and logging, are intertwined in the same code module, making it difficult to understand, maintain, and modify.    
