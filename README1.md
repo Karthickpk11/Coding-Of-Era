@@ -1,4 +1,5 @@
 AWS Interview Questions for a Tech Architecture Role
+
 🧱 1. Core Architecture & Design
 1.	Explain the Well-Architected Framework. How do you apply its five (or six) pillars in real architectures?
 2.	How do you design a multi-tier architecture on AWS that is scalable, secure, and cost-optimized?
