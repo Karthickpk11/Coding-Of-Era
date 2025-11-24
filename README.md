@@ -6,11 +6,11 @@ SOLID is a set of five design principles that make software maintainable, scalab
 
 They are:
 
-S — Single Responsibility Principle (SRP)	
-O — Open/Closed Principle (OCP)		
-L — Liskov Substitution Principle (LSP)		
-I — Interface Segregation Principle (ISP)	
-D — Dependency Inversion Principle (DIP)	
+S — Single Responsibility Principle (SRP)	    
+O — Open/Closed Principle (OCP)		    
+L — Liskov Substitution Principle (LSP)		    
+I — Interface Segregation Principle (ISP)	    
+D — Dependency Inversion Principle (DIP)	    
 
 Let’s break them down.
 
