@@ -7,16 +7,141 @@ SOLID is a set of five design principles that make software maintainable, scalab
 They are:
 
 S — Single Responsibility Principle (SRP)
-
 O — Open/Closed Principle (OCP)
-
 L — Liskov Substitution Principle (LSP)
-
 I — Interface Segregation Principle (ISP)
-
 D — Dependency Inversion Principle (DIP)
 
 Let’s break them down.
+
+1️⃣ Single Responsibility Principle (SRP)
+
+A class should have only one reason to change.
+Meaning: A class should do one job, not many.
+
+✔ Example (Bad)
+class Invoice {
+    void calculateTotal() { }
+    void printInvoice() { }
+    void saveToDB() { }
+}
+
+
+This class calculates, prints, and saves — 3 responsibilities.
+
+✔ Example (Good)
+class InvoiceCalculator { }
+class InvoicePrinter { }
+class InvoiceRepository { }
+
+
+Each class has one responsibility → easier to maintain.
+
+2️⃣ Open/Closed Principle (OCP)
+
+Software entities should be open for extension but closed for modification.
+You should be able to add new functionality without changing existing code.
+
+✔ Example
+
+Instead of modifying a method when new payment types are added:
+
+Bad
+
+if (type == "UPI") { ... }
+else if (type == "Card") { ... }
+
+
+Good: Use polymorphism
+
+interface Payment {
+    void pay();
+}
+
+class UPIPayment implements Payment { ... }
+class CardPayment implements Payment { ... }
+
+
+Now you can add new payment types without modifying existing classes.
+
+3️⃣ Liskov Substitution Principle (LSP)
+
+Subclasses should be substitutable for their parent classes without breaking the program.
+
+If B is a subclass of A, then objects of type A should be replaceable with objects of type B.
+
+❌ Bad example
+
+A Square subclass changing the behavior of a Rectangle (height = width breaks methods expecting independent values).
+
+✔ Good example
+class Bird {
+   void fly();
+}
+
+class Sparrow extends Bird { }
+
+
+The child doesn’t violate the parent’s expected behavior.
+
+4️⃣ Interface Segregation Principle (ISP)
+
+Clients should not be forced to depend on interfaces they do not use.
+
+❌ Bad example
+
+A large interface:
+
+interface Machine {
+    void print();
+    void scan();
+    void fax();
+}
+
+
+A simple printer shouldn't implement scan or fax.
+
+✔ Good example
+
+Split into smaller interfaces:
+
+interface Printer { void print(); }
+interface Scanner { void scan(); }
+interface Fax { void fax(); }
+
+
+Classes only implement what they actually need.
+
+5️⃣ Dependency Inversion Principle (DIP)
+
+Depend on abstractions, not concrete implementations.
+
+High-level modules shouldn’t depend on low-level modules directly.
+
+✔ Example
+
+Instead of:
+
+class Notification {
+    EmailService emailService = new EmailService();
+}
+
+
+Use abstraction:
+
+interface MessageService {
+    void sendMessage();
+}
+
+class EmailService implements MessageService { }
+
+class Notification {
+    private MessageService service;
+    Notification(MessageService service) { this.service = service; }
+}
+
+
+This allows using Email, SMS, Push, etc. → improves testability and flexibility.
 
 📍Code Tangling:  
 Code tangling is the mixing of unrelated functions or concerns within a single piece of code, leading to tight coupling and decreased modularity. It occurs when multiple responsibilities, such as business logic, security, and logging, are intertwined in the same code module, making it difficult to understand, maintain, and modify.    
