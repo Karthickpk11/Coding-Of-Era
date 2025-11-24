@@ -72,9 +72,9 @@ ________________________________________
 4.	Explain chaos engineering and how you would apply it.
 ________________________________________
 🛠️ 10. Real System Design Scenarios
-You may be asked to design solutions such as:
-•	Build a global e-commerce platform on AWS.
-•	Design a real-time streaming analytics system (Kinesis vs Kafka vs MSK).
-•	Move an on-prem enterprise system to AWS with minimal downtime.
-•	Architect a serverless event-driven workflow using Lambda + SQS + EventBridge.
-•	Design a multi-tenant SaaS platform with isolation and cost efficiency.
+You may be asked to design solutions such as:  
+•	Build a global e-commerce platform on AWS.  
+•	Design a real-time streaming analytics system (Kinesis vs Kafka vs MSK).  
+•	Move an on-prem enterprise system to AWS with minimal downtime.  
+•	Architect a serverless event-driven workflow using Lambda + SQS + EventBridge.  
+•	Design a multi-tenant SaaS platform with isolation and cost efficiency.  
