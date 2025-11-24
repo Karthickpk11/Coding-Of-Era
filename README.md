@@ -1,5 +1,23 @@
 # Coding Of Era
 
+⭐ SOLID Principles (Object-Oriented Design)
+
+SOLID is a set of five design principles that make software maintainable, scalable, flexible, and easier to test.
+
+They are:
+
+S — Single Responsibility Principle (SRP)
+
+O — Open/Closed Principle (OCP)
+
+L — Liskov Substitution Principle (LSP)
+
+I — Interface Segregation Principle (ISP)
+
+D — Dependency Inversion Principle (DIP)
+
+Let’s break them down.
+
 📍Code Tangling:  
 Code tangling is the mixing of unrelated functions or concerns within a single piece of code, leading to tight coupling and decreased modularity. It occurs when multiple responsibilities, such as business logic, security, and logging, are intertwined in the same code module, making it difficult to understand, maintain, and modify.    
 **How code tangling occurs**: _Mixing of concerns, Time and delivery pressure, Minor changes over time._	
