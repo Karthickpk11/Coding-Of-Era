@@ -139,6 +139,11 @@ class Notification {
 
 This allows using Email, SMS, Push, etc. → improves testability and flexibility.
 
+🎯 Easy Summary for Interviews
+
+SOLID helps create flexible, testable, and maintainable object-oriented systems.
+SRP gives one responsibility per class, OCP allows extension without modification, LSP ensures subclasses work as expected, ISP splits large interfaces, and DIP makes classes depend on abstractions instead of concrete implementations.
+
 
 📍Code Tangling:  
 Code tangling is the mixing of unrelated functions or concerns within a single piece of code, leading to tight coupling and decreased modularity. It occurs when multiple responsibilities, such as business logic, security, and logging, are intertwined in the same code module, making it difficult to understand, maintain, and modify.    
