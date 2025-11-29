@@ -78,3 +78,51 @@ You may be asked to design solutions such as:
   •	Move an on-prem enterprise system to AWS with minimal downtime.  
   •	Architect a serverless event-driven workflow using Lambda + SQS + EventBridge.  
   •	Design a multi-tenant SaaS platform with isolation and cost efficiency.  
+________________________________________
+📚 Example: Secure Setup with AWS API Gateway + JWT + WAF + Rate Limiting
+
+If you were building a typical REST API on AWS:
+
+Choose REST API or HTTP API in API Gateway depending on features you want.
+
+Configure gateway to use HTTPS only, TLS 1.2+, strong cipher suites. 
+AWS Documentation
++1
+
+Use JWT authorizer (or OAuth/OIDC) — gateway validates tokens, scopes, timestamps before forwarding to backend. 
+Amazon Web Services, Inc.
++1
+
+(Optional but recommended) Use mutual TLS (mTLS) — especially if clients are non-public or partner services. Upload CA cert to trust list and enforce client certificate validation. 
+AWS Documentation
++1
+
+Put a WAF or Web ACL in front: filter malicious traffic, block SQL-injection, injection patterns, automated bots etc. 
+AWS Documentation
++2
+DEV Community
++2
+
+Enable rate limiting / usage plans per client or key — protect from request storms, DoS or abuse. 
+AWS Documentation
++2
+DEV Community
++2
+
+Validate all input payloads: schema enforcement, reject unexpected parameters, limit size. 
+Apono
++1
+
+Enable logging + monitoring + alerting (e.g. CloudWatch + CloudTrail, or your observability stack). Log auth attempts, traffic volume, errors, latency. 
+AWS Documentation
++2
+AWS Documentation
++2
+
+Use resource policies, IAM roles to ensure minimal privileges — only the required backend resources can be invoked, only minimal operations allowed. 
+AWS Documentation
++1
+
+For internal/internal-only APIs: use private endpoints or VPC-only access so they are never exposed publicly. 
+AWS Documentation
++1
