@@ -1,6 +1,7 @@
 Securing an API involves multiple layers of protection to prevent unauthorized access, data leaks, and misuse. Here’s a clear, practical guide:
 
-🔐 How to Secure an API (Best Practices)
+🔐 _How to Secure an API (Best Practices)  _
+
 **1. Use HTTPS Everywhere**
 
 Enforce TLS/SSL to encrypt data in transit.
