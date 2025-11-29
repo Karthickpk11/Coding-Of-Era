@@ -156,3 +156,8 @@ Restrict allowed origins.
 Avoid Access-Control-Allow-Origin: * unless it's a public, anonymous API.
 
 Never rely on CORS for security—it’s only a browser protection.
+
+**Secure Architecture for Inter-Service Communication**  
+<img width="982" height="658" alt="image" src="https://github.com/user-attachments/assets/311e2f60-f436-4a18-90e7-500f0337585c" />
+
+
