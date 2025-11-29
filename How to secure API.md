@@ -1,13 +1,13 @@
 Securing an API involves multiple layers of protection to prevent unauthorized access, data leaks, and misuse. Here’s a clear, practical guide:
 
 🔐 How to Secure an API (Best Practices)
-1. Use HTTPS Everywhere
+**1. Use HTTPS Everywhere**
 
 Enforce TLS/SSL to encrypt data in transit.
 
 Redirect all HTTP requests to HTTPS to prevent MITM attacks.
 
-2. Require Strong Authentication
+**2. Require Strong Authentication**
 
 Choose methods appropriate for your API:
 
@@ -29,7 +29,7 @@ Useful for stateless APIs.
 
 Keep tokens short-lived and signed with a strong secret.
 
-3. Implement Authorization (Access Control)
+**3. Implement Authorization (Access Control)**
 
 Use RBAC (Role-Based Access Control) or ABAC (Attribute-Based Access Control).
 
@@ -37,7 +37,7 @@ Enforce permissions at the API gateway and in the backend.
 
 Never trust user input for roles/permissions.
 
-4. Validate and Sanitize Input
+**4. Validate and Sanitize Input**
 
 Prevent injection attacks:
 
@@ -47,7 +47,7 @@ Use strict schemas (e.g., JSON Schema).
 
 Reject unexpected fields.
 
-5. Rate Limiting & Throttling
+**5. Rate Limiting & Throttling**
 
 Protect against abuse:
 
@@ -57,7 +57,7 @@ Use burst + steady limit strategy.
 
 Return 429 Too Many Requests when triggered.
 
-6. Use an API Gateway / WAF
+**6. Use an API Gateway / WA**F
 
 Gateways provide:
 
@@ -79,7 +79,7 @@ AWS API Gateway
 
 Cloudflare API Shield
 
-7. Protect Against Common Vulnerabilities
+**7. Protect Against Common Vulnerabilities**
 
 Follow OWASP API Security Guidelines:
 
@@ -93,7 +93,7 @@ Broken object-level authorization
 
 Injection flaws
 
-8. Store Secrets Securely
+**8. Store Secrets Securely**
 
 Never hardcode secrets!
 Use:
@@ -108,7 +108,7 @@ Environment variables (short-lived)
 
 Rotate credentials regularly.
 
-9. Enable Logging & Monitoring
+**9. Enable Logging & Monitoring**
 
 Track:
 
@@ -130,7 +130,7 @@ Datadog
 
 Prometheus + Grafana
 
-10. Version Your API & Deactivate Old Versions
+**10. Version Your API & Deactivate Old Versions**
 
 Old versions are often insecure.
 
@@ -138,7 +138,7 @@ Sunset periods for deprecated versions.
 
 Announce removal dates in advance.
 
-11. Conduct Regular Security Testing
+**11. Conduct Regular Security Testing**
 
 Penetration testing
 
@@ -148,7 +148,7 @@ Static & dynamic code analysis
 
 Dependency vulnerability scanning
 
-12. Use CORS Safely (for public APIs)
+**12. Use CORS Safely (for public APIs)**
 
 Restrict allowed origins.
 
