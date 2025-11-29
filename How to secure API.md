@@ -203,8 +203,8 @@ Here are the common and recommended mechanisms for securing communication betwee
     •	Place microservices inside private networks — e.g. private subnets / VPCs / internal clusters. Do not expose internal service APIs publicly.     
     •	Define which services are allowed to communicate with which (service-to-service ACLs or mesh-based policies), to prevent broad permissions that could be exploited.     
 
-📄 **Secure AWS API: Example CloudFormation YAML Template (Secure API Gateway + JWT + WAF + Rate Limiting)**
-
+📄 **Secure AWS API: Example CloudFormation YAML Template (Secure API Gateway + JWT + WAF + Rate Limiting)**        
+secureapitemplateforaws.yaml
 
 
 
