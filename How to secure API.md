@@ -207,5 +207,11 @@ Here are the common and recommended mechanisms for securing communication betwee
 [secureapitemplateforaws.yaml
 ](https://github.com/Karthickpk11/Coding-Of-Era/blob/c11770226912b8b6291dcc0250f5dff487547f98/secureapitemplateforaws.yaml)
 
+🔎 **Explanation of Key Sections**    
+•	MyHttpApi — defines the HTTP API (V2). It includes CORS config.        
+•	JWTAuthorizer — configures the JWT authorizer for the API; you must supply the Issuer and Audience matching your identity provider (OIDC / OAuth).         
+•	MyRoute + MyLambdaIntegration + MyLambdaFunction — example route protected with JWT auth, integrated with a Lambda backend.        
+•	MyUsagePlan + MyApiKey + UsagePlanKey — defines a usage plan with throttling (rate limit & burst) + monthly quota, and attaches it to a client via an API key. This provides per-client/per-API rate limiting/quota.         
+•	MyWebACL + WebACLAssociation — defines a WAF (WAFv2) WebACL with a rate-based rule to block IPs exceeding a threshold. You can add more rules (SQL-i, XSS, geo-blocking, IP blacklist, etc.) to harden security.        
 
 
