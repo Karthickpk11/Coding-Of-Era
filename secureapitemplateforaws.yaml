@@ -1,1 +1,145 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Secure API Gateway stack with JWT authorizer, WAF, rate limiting usage plan
+
+Resources:
+
+  MyHttpApi:
+    Type: AWS::ApiGatewayV2::Api
+    Properties:
+      Name: SecureHttpApi
+      ProtocolType: HTTP
+      CorsConfiguration:
+        AllowMethods: ["GET","POST","PUT","DELETE","OPTIONS"]
+        AllowHeaders: ["Authorization","Content-Type"]
+        AllowOrigins: ["https://your-frontend.example.com"]    # adjust accordingly
+      Description: "HTTP API with JWT auth, WAF, rate limiting"
+
+  JWTAuthorizer:
+    Type: AWS::ApiGatewayV2::Authorizer
+    Properties:
+      ApiId: !Ref MyHttpApi
+      Name: JwtAuth
+      AuthorizerType: JWT
+      IdentitySource:
+        - "$request.header.Authorization"
+      JwtConfiguration:
+        Issuer: "https://your-idp.example.com/"            # adjust to your identity provider
+        Audience:
+          - "your-app-client-id"                           # adjust to your OAuth/OIDC client ID
+
+  # Example route + integration (to Lambda, or HTTP backend)
+  MyRoute:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId: !Ref MyHttpApi
+      RouteKey: GET /secure-data
+      AuthorizationType: JWT
+      AuthorizerId: !Ref JWTAuthorizer
+      Target: !Sub "integrations/${MyLambdaIntegration}"
+
+  MyLambdaIntegration:
+    Type: AWS::ApiGatewayV2::Integration
+    Properties:
+      ApiId: !Ref MyHttpApi
+      IntegrationType: AWS_PROXY
+      IntegrationUri: !GetAtt MyLambdaFunction.Arn
+      PayloadFormatVersion: "2.0"
+
+  MyLambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: secure-api-backend
+      Runtime: python3.9
+      Handler: handler.lambda_handler
+      Role: !GetAtt LambdaExecRole.Arn
+      Code:
+        # Refer to your function code location (zip/s3 etc.)
+        S3Bucket: your-code-bucket
+        S3Key: secure-api-backend.zip
+
+  LambdaExecRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+
+  # API deployment / stage
+  MyApiStage:
+    Type: AWS::ApiGatewayV2::Stage
+    Properties:
+      ApiId: !Ref MyHttpApi
+      StageName: prod
+      AutoDeploy: true
+
+  # Usage Plan + (optional) API key — for rate limiting / quota
+  MyUsagePlan:
+    Type: AWS::ApiGateway::UsagePlan
+    Properties:
+      UsagePlanName: SecureApiUsagePlan
+      Description: "Usage plan with rate limiting and monthly quota"
+      ApiStages:
+        - ApiId: !Ref MyHttpApi
+          Stage: !Ref MyApiStage
+      Quota:
+        Limit: 10000       # e.g. 10,000 requests per month
+        Period: MONTH
+      Throttle:
+        BurstLimit: 200    # max bursts
+        RateLimit: 100     # steady rate (requests per second)
+
+  MyApiKey:
+    Type: AWS::ApiGateway::ApiKey
+    Properties:
+      Enabled: true
+      Name: SecureClientKey
+      Description: "API key for usage plan throttling"
+
+  UsagePlanKey:
+    Type: AWS::ApiGateway::UsagePlanKey
+    Properties:
+      KeyId: !Ref MyApiKey
+      KeyType: API_KEY
+      UsagePlanId: !Ref MyUsagePlan
+
+  # WAF WebACL
+  MyWebACL:
+    Type: AWS::WAFv2::WebACL
+    Properties:
+      DefaultAction:
+        Allow: {}
+      Scope: REGIONAL
+      VisibilityConfig:
+        SampledRequestsEnabled: true
+        CloudWatchMetricsEnabled: true
+        MetricName: SecureApiWebACL
+      Name: SecureApiWebACL
+      Description: "WAF for API Gateway to block common attacks and rate-based rules"
+      Rules:
+        - Name: RateLimitByIP
+          Priority: 1
+          Statement:
+            RateBasedStatement:
+              AggregateKeyType: IP
+              Limit: 1000            # e.g. 1000 requests per 5-minute window from same IP
+          Action:
+            Block: {}
+          VisibilityConfig:
+            SampledRequestsEnabled: true
+            CloudWatchMetricsEnabled: true
+            MetricName: RateLimitByIPRule
+        # Add more rules (SQL injection, XSS, geo-block, etc.) or managed rule groups as needed
+
+  # WAF association to API Gateway stage
+  ApiGatewayStageProtected:
+    Type: AWS::WAFv2::WebACLAssociation
+    Properties:
+      ResourceArn: !Sub "arn:aws:apigateway:${AWS::Region}::/restapis/${MyHttpApi}/stages/${MyApiStage}"
+      WebACLArn: !Ref MyWebACL
 
