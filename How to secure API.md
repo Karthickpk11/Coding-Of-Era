@@ -204,8 +204,8 @@ Here are the common and recommended mechanisms for securing communication betwee
     •	Define which services are allowed to communicate with which (service-to-service ACLs or mesh-based policies), to prevent broad permissions that could be exploited.     
 
 📄 **Secure AWS API: Example CloudFormation YAML Template (Secure API Gateway + JWT + WAF + Rate Limiting)**        
-secureapitemplateforaws.yaml
-
+[secureapitemplateforaws.yaml
+](https://github.com/Karthickpk11/Coding-Of-Era/blob/c11770226912b8b6291dcc0250f5dff487547f98/secureapitemplateforaws.yaml)
 
 
 
