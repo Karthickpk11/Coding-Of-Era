@@ -160,4 +160,23 @@ Never rely on CORS for security—it’s only a browser protection.
 **Secure Architecture for Inter-Service Communication**  
 <img width="982" height="658" alt="image" src="https://github.com/user-attachments/assets/311e2f60-f436-4a18-90e7-500f0337585c" />
 
+🔧 **Practical Methods / Mechanisms for Secure Service-to-Service Communication**  
+Here are the common and recommended mechanisms for securing communication between microservices:    
+**Mutual TLS (mTLS)**  
+•	Each microservice has its own TLS certificate (public/private key pair), usually issued by a central internal Certificate Authority (CA). 
+•	When Service A calls Service B, both sides present and verify certificates — ensuring both ends are who they claim to be. 
+•	All data exchanged is encrypted — protecting against eavesdropping or tampering. 
+•	mTLS is widely regarded as a strong baseline for internal (east-west) communication between services.     
+**Token-based Authentication (JWT / OAuth / Service Tokens)**  
+•	Use a trusted identity issuer (Auth service / identity provider) to issue cryptographically signed tokens (e.g. JWT). Services receiving a request validate the token, verifying its signature, issuer, audience/scope, expiry, etc. 
+•	Good for stateless authentication: no server-side session state needed. 
+•	Works well in combination with mTLS or within a secure mesh — adding an identity/assertion layer beyond transport encryption.   
+**Service Mesh / Sidecar Proxy Pattern**  
+•	Use a service-mesh framework (e.g. Istio, Linkerd, Consul Connect, etc.) to abstract and manage inter-service communication. The mesh injects a proxy (sidecar) alongside each microservice. 
+•	The mesh transparently handles mutual TLS, certificate distribution/rotation, encryption, and service-to-service authentication. 
+•	Allows implementing fine-grained policies (which service can talk to which, under what conditions) — reducing risk of lateral movement, limiting which services can communicate. 
+•	Also aids monitoring, observability, and centralized control, without changing business-logic code.   
+**Network Segmentation & Least Privilege / Access Control**  
+•	Place microservices inside private networks — e.g. private subnets / VPCs / internal clusters. Do not expose internal service APIs publicly. 
+•	Define which services are allowed to communicate with which (service-to-service ACLs or mesh-based policies), to prevent broad permissions that could be exploited. 
 
