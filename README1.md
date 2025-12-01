@@ -93,3 +93,8 @@ If you were building a typical REST API on AWS:
 9.	Use resource policies, IAM roles to ensure minimal privileges — only the required backend resources can be invoked, only minimal operations allowed.  
 10.	For internal/internal-only APIs: use private endpoints or VPC-only access so they are never exposed publicly.  
 
+
+**EC2 instance with EBS,ELB,ASG,Target Group + Listener, Security Groups,Outputs**  
+<img width="803" height="499" alt="image" src="https://github.com/user-attachments/assets/af06c1eb-9aca-4bf8-a748-97407dac0c74" />
+
+
