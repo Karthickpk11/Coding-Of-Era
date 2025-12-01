@@ -81,5 +81,4 @@ AWS WAF inspects every request and allows/block/counts traffic based on:
 •	Geo match  
 •	Bot Control rules  
 •	Managed Rules (AWS Managed Rule Groups)  
-
-Custom rules
+•	Custom rules
