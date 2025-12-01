@@ -2,19 +2,19 @@
 <img width="803" height="499" alt="image" src="https://github.com/user-attachments/assets/af06c1eb-9aca-4bf8-a748-97407dac0c74" />
 
 **Internal Working of an AMI in AWS**  
-                               ┌─────────────────────────┐
-                               │        AMI (Image)      │
-                               │─────────────────────────│
-                               │ * Root Snapshot (EBS)   │
-                               │ * Block Device Mapping  │
-                               │ * Metadata (Kernel,     │
-                               │   RAMDisk, Permissions) │
-                               │ * Launch Permissions    │
-                               └─────────────────────────┘
-                                            │
-                          (Used to create EC2 instance)
-                                            │
-                                            ▼
+                               ┌─────────────────────────┐  
+                               │        AMI (Image)      │  
+                               │─────────────────────────│  
+                               │ * Root Snapshot (EBS)   │  
+                               │ * Block Device Mapping  │  
+                               │ * Metadata (Kernel,     │  
+                               │   RAMDisk, Permissions) │  
+                               │ * Launch Permissions    │  
+                               └─────────────────────────┘  
+                                            │  
+                          (Used to create EC2 instance)  
+                                            │  
+                                            ▼  
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │                         EC2 INSTANCE LAUNCH PROCESS                          │
 │                                                                              │
