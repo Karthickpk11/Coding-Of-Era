@@ -1,1 +1,149 @@
+# This is a clean, production-ready baseline that you can customize.
+# ✔ EC2 Launch Template
+# ✔ EBS volume (via LaunchTemplate block device mappings)
+# ✔ Application Load Balancer (ALB / ELB v2)
+# ✔ Auto Scaling Group (ASG)
+# ✔ Target Group + Listener
+# ✔ Security Groups
+# ✔ Outputs
+
+AWSTemplateFormatVersion: "2010-09-09"
+Description: EC2 with EBS, ALB, and Auto Scaling Group
+
+Parameters:
+  VpcId:
+    Type: AWS::EC2::VPC::Id
+    Description: Select existing VPC
+
+  PublicSubnets:
+    Type: List<AWS::EC2::Subnet::Id>
+    Description: Select 2+ public subnets for ALB and ASG
+
+  KeyPairName:
+    Type: AWS::EC2::KeyPair::KeyName
+    Description: Name of existing Key Pair for SSH access
+
+  InstanceType:
+    Type: String
+    Default: t3.micro
+
+  AmiId:
+    Type: AWS::EC2::Image::Id
+    Default: ami-0c02fb55956c7d316
+
+Resources:
+  #########################################
+  ## Security Groups
+  #########################################
+
+  AlbSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow HTTP to ALB
+      VpcId: !Ref VpcId
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+
+  Ec2SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow web traffic from ALB
+      VpcId: !Ref VpcId
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          SourceSecurityGroupId: !Ref AlbSecurityGroup
+
+  #########################################
+  ## Application Load Balancer
+  #########################################
+
+  ApplicationLoadBalancer:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    Properties:
+      Subnets: !Ref PublicSubnets
+      SecurityGroups:
+        - !Ref AlbSecurityGroup
+      Scheme: internet-facing
+      Type: application
+
+  TargetGroup:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      VpcId: !Ref VpcId
+      Port: 80
+      Protocol: HTTP
+      TargetType: instance
+      HealthCheckPath: /
+      Matcher:
+        HttpCode: 200
+
+  Listener:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    Properties:
+      LoadBalancerArn: !Ref ApplicationLoadBalancer
+      Port: 80
+      Protocol: HTTP
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: !Ref TargetGroup
+
+  #########################################
+  ## Launch Template (EC2 + EBS)
+  #########################################
+
+  LaunchTemplate:
+    Type: AWS::EC2::LaunchTemplate
+    Properties:
+      LaunchTemplateData:
+        ImageId: !Ref AmiId
+        InstanceType: !Ref InstanceType
+        KeyName: !Ref KeyPairName
+        SecurityGroupIds:
+          - !Ref Ec2SecurityGroup
+        BlockDeviceMappings:
+          - DeviceName: /dev/xvda
+            Ebs:
+              VolumeSize: 20
+              VolumeType: gp3
+              DeleteOnTermination: true
+        UserData:
+          Fn::Base64: |
+            #!/bin/bash
+            yum update -y
+            yum install -y httpd
+            systemctl start httpd
+            echo "Hello from AutoScaled EC2" > /var/www/html/index.html
+
+  #########################################
+  ## Auto Scaling Group
+  #########################################
+
+  AutoScalingGroup:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    Properties:
+      VPCZoneIdentifier: !Ref PublicSubnets
+      MinSize: "2"
+      MaxSize: "4"
+      DesiredCapacity: "2"
+      LaunchTemplate:
+        LaunchTemplateId: !Ref LaunchTemplate
+        Version: !GetAtt LaunchTemplate.LatestVersionNumber
+      TargetGroupARNs:
+        - !Ref TargetGroup
+      HealthCheckType: ELB
+      HealthCheckGracePeriod: 90
+
+  #########################################
+  ## Outputs
+  #########################################
+
+Outputs:
+  LoadBalancerDNS:
+    Description: ALB DNS Name
+    Value: !GetAtt ApplicationLoadBalancer.DNSName
 
