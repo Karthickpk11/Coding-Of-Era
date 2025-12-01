@@ -74,18 +74,12 @@
 🚀 **How AWS WAF Works (Simple View)**  
 Client → CloudFront / ALB → AWS WAF → Your Application (EC2 / API / Lambda)
 
-AWS WAF inspects every request and allows/block/counts traffic based on:
-
-IP sets
-
-Regex match
-
-Header match
-
-Geo match
-
-Bot Control rules
-
-Managed Rules (AWS Managed Rule Groups)
+AWS WAF inspects every request and allows/block/counts traffic based on:  
+•	IP sets  
+•	Regex match  
+•	Header match  
+•	Geo match  
+•	Bot Control rules  
+•	Managed Rules (AWS Managed Rule Groups)  
 
 Custom rules
