@@ -71,4 +71,21 @@
 | **Manifest file**                                       | Internal AWS representation of AMI structure.                     |
 | **AMI ID (ami-xxxx)**                                   | Pointer to metadata stored in AWS control plane.                  |
 
+🚀 **How AWS WAF Works (Simple View)**  
+Client → CloudFront / ALB → AWS WAF → Your Application (EC2 / API / Lambda)
 
+AWS WAF inspects every request and allows/block/counts traffic based on:
+
+IP sets
+
+Regex match
+
+Header match
+
+Geo match
+
+Bot Control rules
+
+Managed Rules (AWS Managed Rule Groups)
+
+Custom rules
