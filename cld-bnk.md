@@ -1,4 +1,6 @@
 **AWS Cloud-Native Banking Architecture**
+(Layered)  
+<img width="575" height="892" alt="image" src="https://github.com/user-attachments/assets/432a6e36-3ec2-43ce-b5be-754bb900e361" />
 
 
 **Layer-to-AWS Mapping**  
