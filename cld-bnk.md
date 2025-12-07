@@ -191,27 +191,27 @@ Chapter II
 
 🔄 **Step-by-Step Flow (Secure Transaction)**  
 1.	User Authentication  
-  o	User enters credentials in app or web browser
-  o	Connection uses HTTPS/TLS 1.2/1.3
-  o	Multi-factor authentication (MFA) may be applied
+  	User enters credentials in app or web browser
+  |	Connection uses HTTPS/TLS 1.2/1.3
+  |	Multi-factor authentication (MFA) may be applied
 2.	Token / Session Management  
-  o	Auth service issues JWT or session token
-  o	Token sent in secure HTTP-only, SameSite cookies or Authorization header
+   	Auth service issues JWT or session token
+  |	Token sent in secure HTTP-only, SameSite cookies or Authorization header
 3.	Transaction Request  
-  o	User initiates a transfer
-  o	Request travels over TLS-encrypted HTTPS
-  o	Server validates JWT / session token
+   	User initiates a transfer
+  |	Request travels over TLS-encrypted HTTPS
+  |	Server validates JWT / session token
 4.	Business Logic / Validation  
-  o	Server checks account balance, fraud rules, limits
-  o	All sensitive data handled in memory, never logged in plaintext
+   	Server checks account balance, fraud rules, limits
+  |	All sensitive data handled in memory, never logged in plaintext
 5.	Database Interaction  
-  o	All stored sensitive data encrypted at rest (AES-256)
-  o	Database connection also uses TLS/SSL
-  o	Optional: Field-level encryption for PAN, SSN, passwords
+   	All stored sensitive data encrypted at rest (AES-256)
+  |	Database connection also uses TLS/SSL
+  |	Optional: Field-level encryption for PAN, SSN, passwords
 6.	Transaction Response  
-  o	Response encrypted via TLS back to client
-  o	Server logs audit info securely for compliance
+   	Response encrypted via TLS back to client
+  |	Server logs audit info securely for compliance
 7.	Optional mTLS (Mutual TLS)  
-  o	If internal microservices communicate, use mutual TLS to authenticate servers
+   	If internal microservices communicate, use mutual TLS to authenticate servers
 
 
