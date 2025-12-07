@@ -185,3 +185,33 @@ For real-time events like payments, fraud alerts, notifications
 **Observability:** Logs, metrics, and tracing are mandatory for compliance and incident response.
 
 
+Chapter II
+
+<img width="616" height="566" alt="image" src="https://github.com/user-attachments/assets/3b235995-91ad-4454-b49d-259e9cb77592" />
+
+🔄 **Step-by-Step Flow (Secure Transaction)**  
+1.	User Authentication  
+  o	User enters credentials in app or web browser
+  o	Connection uses HTTPS/TLS 1.2/1.3
+  o	Multi-factor authentication (MFA) may be applied
+2.	Token / Session Management  
+  o	Auth service issues JWT or session token
+  o	Token sent in secure HTTP-only, SameSite cookies or Authorization header
+3.	Transaction Request  
+  o	User initiates a transfer
+  o	Request travels over TLS-encrypted HTTPS
+  o	Server validates JWT / session token
+4.	Business Logic / Validation  
+  o	Server checks account balance, fraud rules, limits
+  o	All sensitive data handled in memory, never logged in plaintext
+5.	Database Interaction  
+  o	All stored sensitive data encrypted at rest (AES-256)
+  o	Database connection also uses TLS/SSL
+  o	Optional: Field-level encryption for PAN, SSN, passwords
+6.	Transaction Response  
+  o	Response encrypted via TLS back to client
+  o	Server logs audit info securely for compliance
+7.	Optional mTLS (Mutual TLS)  
+  o	If internal microservices communicate, use mutual TLS to authenticate servers
+
+
