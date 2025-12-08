@@ -206,4 +206,45 @@ _Authorization = checking funds + approving the payment_
              └──────────────────────────────────────────┘
 
 
-sdfsdfsdf
+**UOB Mighty Secure App Authentication Flow (3-D Secure 2.0)**
+
+The UOB Mighty Secure app is UOB's version of 3-D Secure authentication, used in conjunction with 3DS 2.0 for secure online transactions. It allows customers to approve payments using biometric authentication (fingerprint/Face ID) or PIN in the UOB Mighty app, rather than relying on SMS OTP (one-time passwords).
+
+This adds an extra layer of security for online payments by authenticating the identity of the cardholder directly via the UOB mobile app, reducing fraud risks while improving user experience.
+
+**How UOB Mighty Secure Authentication Works**
+
+1️⃣ Customer Makes an Online Purchase
+
+1.	You (the customer) selects an item for purchase on a merchant website and proceeds to checkout.  
+2.	You choose to pay with a UOB credit or debit card (Visa or Mastercard).
+_____________________________________________________________________________________________________________________________________
+2️⃣ Merchant Payment Gateway Sends Authentication Request
+
+•	The merchant’s payment gateway sends the 3-D Secure authentication request to Visa/Mastercard.
+
+•	This request includes:  
+o	Transaction amount
+o	Card details
+o	Risk information (device fingerprint, location, etc.)
+•	Visa/Mastercard Directory Server checks if the card is enrolled in 3D Secure (e.g., UOB Mighty Secure).
+_____________________________________________________________________________________________________________________________________
+3️⃣ Visa/Mastercard Sends Request to UOB Access Control Server (ACS)
+
+•	If UOB is the card issuer (the bank that issued the card), the Directory Server forwards the authentication request to UOB's Access Control Server (ACS).
+
+•	UOB ACS processes the authentication request, which includes checking the risk level of the transaction.
+_____________________________________________________________________________________________________________________________________
+4️⃣ UOB Mighty Secure Authentication via the UOB App
+
+•	UOB’s ACS triggers the UOB Mighty Secure authentication process:  
+o	If the request is deemed low-risk, UOB’s system might approve automatically (Frictionless Flow).
+o	If the request is high-risk (e.g., new device, high value), UOB will require the customer to authenticate via the UOB Mighty app.
+_____________________________________________________________________________________________________________________________________
+5️⃣ UOB Mighty App Requests Authentication
+
+•	The UOB Mighty app prompts the customer to authenticate the payment via:  
+o	Biometric Authentication (Face ID / Fingerprint)
+o	App PIN (if biometric is not set up)
+_____________________________________________________________________________________________________________________________________
+
