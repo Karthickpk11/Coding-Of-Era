@@ -11,3 +11,8 @@ When you pay on an e-commerce site with a UOB Visa/Mastercard, multiple systems 
 7.	Merchant receives confirmation and completes the order.  
 8.	The financial settlement happens later (batch clearing).  
 
+Sample: :: UOB Card Payment Flow on Merchant Website ::
+
+<img width="276" height="801" alt="image" src="https://github.com/user-attachments/assets/087a7267-5be3-46d7-bada-b68156d665c7" />
+
+
