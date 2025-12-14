@@ -1,35 +1,39 @@
 **Skill topics + top 30 interview questions with key points:**
 
-**Step 1: Exact Skill Topics List (Focus Areas)**
+**Step 1: Exact Skill Topics List (Focus Areas)**  
 1️⃣ Backend Core (Java / Spring Boot / .NET)  
-  •	OOP concepts: Inheritance, Polymorphism, Encapsulation, Abstraction  
-  •	Java Collections: List, Set, Map, HashMap, TreeMap  
-  •	Exception Handling, Logging (SLF4J / Log4j)  
-  •	Multi-threading, Concurrency, Synchronization basics  
-  •	REST APIs: CRUD operations, JSON serialization  
-  •	Spring Boot: Dependency Injection, MVC, Security basics, Spring Data JPA  
-  •	Microservices concepts: Service discovery, load balancing, fault tolerance  
-  •	Design Patterns: Singleton, Factory, Observer, Strategy  
+  *	OOP concepts: Inheritance, Polymorphism, Encapsulation, Abstraction  
+  *	Java Collections: List, Set, Map, HashMap, TreeMap  
+  *	Exception Handling, Logging (SLF4J / Log4j)  
+  *	Multi-threading, Concurrency, Synchronization basics  
+  *	REST APIs: CRUD operations, JSON serialization  
+  *	Spring Boot: Dependency Injection, MVC, Security basics, Spring Data JPA  
+  *	Microservices concepts: Service discovery, load balancing, fault tolerance  
+  *	Design Patterns: Singleton, Factory, Observer, Strategy
+    
 2️⃣ Database / SQL  
-  •	SQL Queries: Joins, Subqueries, Aggregate functions  
-  •	Indexing, query optimization  
-  •	Transactions & ACID properties  
-  •	Stored Procedures & Triggers (optional)  
+  *	SQL Queries: Joins, Subqueries, Aggregate functions  
+  *	Indexing, query optimization  
+  *	Transactions & ACID properties  
+  *	Stored Procedures & Triggers (optional)
+    
 3️⃣ Cloud (AWS / Azure basics)  
-  •	EC2, S3, RDS, IAM, Lambda  
-  •	Deployment concepts: CI/CD (Jenkins / GitHub Actions)  
-  •	Docker basics (optional but recommended)  
-  •	Cloud architecture best practices: Scalability, Fault tolerance  
+  *	EC2, S3, RDS, IAM, Lambda  
+  *	Deployment concepts: CI/CD (Jenkins / GitHub Actions)  
+  *	Docker basics (optional but recommended)  
+  *	Cloud architecture best practices: Scalability, Fault tolerance
+    
 4️⃣ System Design
-  •	High-level architecture: Monolith → Microservices  
-  •	Load balancing, Caching, Database partitioning  
-  •	Handling concurrency & consistency  
-  •	Logging & Monitoring strategies  
+  *	High-level architecture: Monolith → Microservices  
+  *	Load balancing, Caching, Database partitioning  
+  *	Handling concurrency & consistency  
+  *	Logging & Monitoring strategies
+    
 5️⃣ Application Support / Production  
-  •	Incident handling, Root cause analysis  
-  •	Debugging production issues  
-  •	Monitoring tools: CloudWatch / Splunk / Grafana  
-  •	Client communication & documentation  
+  *	Incident handling, Root cause analysis  
+  *	Debugging production issues  
+  *	Monitoring tools: CloudWatch / Splunk / Grafana  
+  *	Client communication & documentation  
 ________________________________________
 **Step 2: Top 30 Interview Questions (Senior Backend + Cloud)**  
 A. Java / Backend (10)
