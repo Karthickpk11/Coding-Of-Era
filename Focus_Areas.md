@@ -79,6 +79,14 @@ ________________________________________
 28.	Monitoring & logging tools you have used.
 29.	How to reduce downtime in production?
 30.	How to communicate critical issues to clients?
-
+________________________________________
+Step 3: Key Points / Suggested Answers
+* Always give concise explanation + example from your experience
+* Highlight ownership & leadership
+* Example:
+  - Q: “How do you handle production incident?”
+  - A: “First I analyze logs (CloudWatch/Splunk), identify root cause, implement fix in dev/test, coordinate with team, communicate status to client. Reduced downtime by X%.”
+    
+	* Emphasize Mentoring Juniors / Team Ownership / Critical Thinking
 
 
