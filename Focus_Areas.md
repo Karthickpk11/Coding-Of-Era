@@ -183,3 +183,152 @@ ________________________________________
 * **Safe Path:** Backend + Cloud + Support / Modernization
 * **Outcome:** Stable senior role, good growth, minimal layoff risk
 * **Timeline:** 90–120 days for comeback
+
+Perfect — here’s a **clear, week-by-week roadmap**
+This is a **12-week (3-month) intensive plan** that gives you **job-ready skills** in **Cloud + AI foundations** (the fastest and most versatile combo).
+You can later specialise into **AI Engineer / Cloud Engineer / Cybersecurity**.
+
+> ⏱ Assumes ~10–15 hrs/week
+---
+
+# 🗓️ 12-Week Upskilling Roadmap
+
+## 🔹 PHASE 1: Tech Foundations (Weeks 1–4)
+
+### **Week 1 – Linux & Tech Basics**
+
+* Linux commands (files, permissions, processes)
+* Basic networking (IP, DNS, ports)
+* Tools: Terminal, VS Code
+* ✅ Deliverable: Linux cheatsheet + GitHub repo
+
+---
+
+### **Week 2 – Java Fundamentals**
+
+* Java syntax, JVM, JDK
+* Data types, control flow
+* OOP: classes, objects, methods
+* Tools: IntelliJ IDEA, Git
+* ✅ Deliverable: Java basics repo on GitHub
+
+---
+
+### **Week 3 – Data & SQL**
+
+* SQL basics (SELECT, JOIN, GROUP BY)
+* Intro to Pandas
+* Data cleaning & analysis
+* ✅ Project: Simple data analysis dashboard (CSV → insights)
+
+---
+
+### **Week 4 – Git, Cloud Basics & Career Prep**
+
+* Git & GitHub (push, pull, branches)
+* What is cloud computing?
+* AWS core services overview
+* LinkedIn optimisation (SG-style CV)
+* ✅ Deliverable: GitHub portfolio live
+
+---
+
+## 🔹 PHASE 2: Cloud Engineering (Weeks 5–8)
+
+### **Week 5 – AWS Core Services**
+
+* EC2 (virtual machines)
+* S3 (storage)
+* IAM (security)
+* Hands-on labs
+* ✅ Project: Deploy a basic web app on EC2
+
+---
+
+### **Week 6 – Networking & Security in Cloud**
+
+* VPC, subnets, security groups
+* Load balancers
+* Encryption basics
+* SG-relevant: PDPA & data security basics
+* ✅ Project: Secure cloud architecture diagram
+
+---
+
+### **Week 7 – DevOps & Automation**
+
+* Docker fundamentals
+* CI/CD pipelines
+* Infrastructure as Code (Terraform basics)
+* ✅ Project: Containerised app with auto deployment
+
+---
+
+### **Week 8 – AWS Certification Prep**
+
+* AWS Solutions Architect – Associate
+* Practice exams & weak areas
+* Exam strategies
+* ✅ Outcome: **AWS certification attempt**
+
+---
+
+## 🔹 PHASE 3: AI Foundations (Weeks 9–11)
+
+### **Week 9 – Data Science & ML Basics**
+
+* Regression & classification
+* Scikit-learn
+* Feature engineering
+* ✅ Project: ML model predicting business outcome
+
+---
+
+### **Week 10 – Generative AI & LLMs**
+
+* How LLMs work
+* Prompt engineering
+* OpenAI / LLM APIs
+* Retrieval-Augmented Generation (RAG)
+* ✅ Project: AI chatbot for business use case
+
+---
+
+### **Week 11 – Deploying AI on Cloud**
+
+* APIs for ML models
+* Hosting AI services on AWS
+* Monitoring & cost control
+* SG-relevant: AI governance basics
+* ✅ Project: Cloud-hosted AI app (portfolio-ready)
+
+---
+
+## 🔹 PHASE 4: Job-Ready Polish (Week 12)
+
+### **Week 12 – Career Launch**
+
+* STAR method interview prep
+* Mock technical interviews
+  
+---
+
+# 📜 Certifications (Take These, Skip the Rest)
+
+✅ **AWS Solutions Architect – Associate**
+➕ Optional next:
+
+* Azure AZ-104 (banks)
+* AI-102 (AI roles)
+* Security+ (security track)
+
+---
+
+# 🇸🇬 Why This Works in Singapore
+
+✔ Cloud + AI = **highest hiring volume**
+✔ Certs + projects beat degrees for many roles
+✔ Banks, GovTech & MNCs align with this stack
+✔ Mid-career switch friendly
+
+---
