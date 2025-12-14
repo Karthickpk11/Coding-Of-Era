@@ -324,11 +324,126 @@ You can later specialise into **AI Engineer / Cloud Engineer / Cybersecurity**.
 
 ---
 
-# 🇸🇬 Why This Works in Singapore
+## 🔹 PHASE 1: Java & Backend Foundations (Weeks 1–4)
 
-✔ Cloud + AI = **highest hiring volume**
-✔ Certs + projects beat degrees for many roles
-✔ Banks, GovTech & MNCs align with this stack
-✔ Mid-career switch friendly
+### **Week 1 – Java Core Fundamentals**
+
+* Java syntax, JVM, JDK
+* Data types, control flow
+* OOP: classes, objects, methods
+* Tools: IntelliJ IDEA, Git
+* ✅ Deliverable: Java basics repo on GitHub
+
+---
+
+### **Week 2 – Object-Oriented Programming (Enterprise Style)**
+
+* OOP principles: SOLID
+* Collections (List, Map, Set)
+* Exception handling
+* Unit testing (JUnit)
+* ✅ Project: Console-based Java application
+
+---
+
+### **Week 3 – Spring Boot Fundamentals**
+
+* Spring Boot architecture
+* REST APIs
+* Dependency Injection
+* Maven / Gradle
+* ✅ Project: REST API (CRUD app)
+
+---
+
+### **Week 4 – Databases & SQL**
+
+* SQL (PostgreSQL / MySQL)
+* JPA / Hibernate
+* Entity relationships
+* Basic indexing & performance
+* ✅ Project: Java + DB application
+
+---
+
+## 🔹 PHASE 2: Cloud-Ready Java Development (Weeks 5–8)
+
+### **Week 5 – Web Security & APIs**
+
+* REST best practices
+* Authentication (JWT, OAuth basics)
+* API security
+* SG relevance: PDPA data handling
+* ✅ Project: Secure REST API
+
+---
+
+### **Week 6 – Cloud with AWS (Java Focus)**
+
+* AWS EC2, RDS, S3
+* IAM roles & permissions
+* Deploy Java Spring Boot app
+* ✅ Project: Java app deployed on AWS
+
+---
+
+### **Week 7 – DevOps for Java Developers**
+
+* Docker for Java apps
+* CI/CD with GitHub Actions
+* Logging & monitoring
+* ✅ Project: Containerised Java app with CI/CD
+
+---
+
+### **Week 8 – AWS Certification Prep**
+
+* AWS Solutions Architect – Associate
+* Java-centric architecture patterns
+* Practice exams
+* ✅ Outcome: **AWS certification attempt**
+
+---
+
+## 🔹 PHASE 3: Java + AI Foundations (Weeks 9–11)
+
+### **Week 9 – Data & Analytics with Java**
+
+* Java streams
+* Basic data processing
+* Intro to analytics
+* Calling Python/AI services via APIs
+* ✅ Project: Data processing service in Java
+
+---
+
+### **Week 10 – AI & GenAI Integration (Java)**
+
+* How LLMs work
+* Using AI APIs from Java
+* Prompt engineering basics
+* Business use cases (finance, ops)
+* ✅ Project: Java backend + AI feature
+
+---
+
+### **Week 11 – Microservices & Cloud Architecture**
+
+* Microservices concepts
+* Spring Cloud basics
+* Load balancing & scaling
+* Cost & performance optimisation
+* ✅ Project: Microservice-based Java app
+
+---
+
+# 📜 Certifications (High Value in allover)
+
+✅ **AWS Solutions Architect – Associate**
+➕ Optional later:
+
+* Oracle Java Certification
+* Azure AZ-204 (Java devs)
+* Kubernetes (CKAD)
 
 ---
