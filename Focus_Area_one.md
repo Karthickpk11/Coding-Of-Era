@@ -505,6 +505,96 @@ I needed to **secure the AWS environment** against unauthorized access and data 
 
 ---
 
+---
+**Spring Boot backend, AWS deployment, mobile/web frontend, and blue-green deployment**.
+
+This answer emphasizes **MAS TRM compliance, zero downtime, security, and scalability**.
+
+---
+
+# ⭐ STAR – Full-Stack Spring Boot + AWS Mobile/Web Application (Blue-Green)
+
+### **Question:**
+
+“Tell me about a full-stack mobile/web application you deployed on AWS, including backend, frontend, and deployment strategy.”
+
+---
+
+## **S – Situation**
+
+I worked on a **mobile/web banking application** that allowed users to view account balances, perform transfers, and receive real-time notifications.
+It needed to be **secure, highly available, and compliant with MAS TRM** because it handled sensitive financial data.
+UOB required **controlled deployment with zero downtime** for production releases.
+
+---
+
+## **T – Task**
+
+I was responsible for:
+
+* Developing the **Spring Boot backend** and integrating it with the mobile/web frontend
+* Deploying the full application on **AWS with a blue-green deployment strategy**
+* Ensuring **scalability, security, and compliance**
+* Setting up **monitoring, logging, and rollback procedures**
+
+---
+
+## **A – Action**
+
+### **Backend Development (Spring Boot)**
+
+* Built **RESTful APIs** using **Spring Boot**
+* Used **Spring Security + JWT** for authentication and authorization
+* Connected to **RDS PostgreSQL** with **transactional integrity and auditing**
+* Externalised configs via **Spring Profiles**
+
+### **Frontend (Mobile/Web)**
+
+* Web: Hosted static assets on **S3 + CloudFront** for low-latency delivery
+* Mobile: Integrated API endpoints securely with backend
+* Enabled **HTTPS/TLS** across all endpoints
+
+### **AWS Deployment & Blue-Green Strategy**
+
+* Containerised backend with **Docker**
+* Deployed on **AWS ECS with Fargate** or EC2 cluster
+* Created **Blue (current) and Green (new) environments**
+* Used **ALB** to switch traffic between Blue and Green after successful health checks
+* Applied **IAM least-privilege roles**, encrypted secrets via **Secrets Manager**, and RBAC controls
+
+### **Monitoring & Compliance**
+
+* Enabled **CloudWatch and CloudTrail** for metrics and audit logging
+* Configured **alerts for CPU, memory, response time, and error rates**
+* Conducted functional, security, and regression testing in the Green environment before switching traffic
+
+---
+
+## **R – Result**
+
+* Achieved **zero-downtime deployment** for critical banking services
+* Application scaled automatically to handle peak traffic
+* Security and compliance audits passed successfully (**MAS TRM & PDPA aligned**)
+* Page load times reduced **~30%** for web, backend response times reduced **~25%**
+* Deployment process documented and adopted as a **standard template for other services**
+
+---
+
+## ✅ Key UOB/DBS/FinTech Takeaways
+
+* **Security-first mindset**: TLS, IAM least-privilege, Secrets Manager, Spring Security
+* **Zero-downtime & risk control**: Blue-green deployment, ALB traffic switching
+* **Scalability & monitoring**: Auto-scaling ECS/EC2, CloudWatch/Grafana, read replicas
+* **Compliance & audit-ready**: CloudTrail logging, MAS TRM alignment, documentation
+
+---
+
+### 💡 One-Line Power Summary
+
+> “I deployed a full-stack mobile/web banking application using Spring Boot backend and AWS with blue-green deployment, achieving zero downtime, MAS-compliant security, and scalable, audit-ready infrastructure.”
+
+---
+
 
 
 
