@@ -86,7 +86,6 @@ Step 3: Key Points / Suggested Answers
 * Example:
   - Q: “How do you handle production incident?”
   - A: “First I analyze logs (CloudWatch/Splunk), identify root cause, implement fix in dev/test, coordinate with team, communicate status to client. Reduced downtime by X%.”
-    
-	* Emphasize Mentoring Juniors / Team Ownership / Critical Thinking
+* Emphasize Mentoring Juniors / Team Ownership / Critical Thinking
 
 
