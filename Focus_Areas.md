@@ -36,7 +36,7 @@
   *	Client communication & documentation  
 ________________________________________
 **Step 2: Top 30 Interview Questions (Senior Backend + Cloud)**  
-A. Java / Backend (10)
+**A. Java / Backend (10)**
 1.	Explain OOP concepts with real examples.
 2.	Difference between HashMap and ConcurrentHashMap.
 3.	Explain multi-threading & synchronization in Java.
@@ -48,28 +48,32 @@ A. Java / Backend (10)
 9.	Explain Garbage Collection in Java.
 10.	How do you handle memory leaks in Java?
 ________________________________________
-B. SQL / Database (5)
+**B. SQL / Database (5)**
+
 11.	Write a query to find the second highest salary.
 12.	Explain INNER JOIN, LEFT JOIN, RIGHT JOIN.
 13.	How do you optimize slow queries?
 14.	Explain ACID properties.
 15.	Difference between Clustered & Non-clustered Index.
 ________________________________________
-C. Microservices / System Design (5)
+**C. Microservices / System Design (5)**
+
 16.	Explain microservices vs monolith.
 17.	How to design a URL shortener / booking system.
 18.	What is load balancing? How to implement?
 19.	Explain caching strategies (Redis / Memcached).
 20.	How to handle failure in microservices?
 ________________________________________
-D. Cloud / DevOps (5)
+**D. Cloud / DevOps (5)**
+
 21.	AWS EC2 vs Lambda – use cases.
 22.	How to deploy a Spring Boot app on AWS.
 23.	What is S3 and how to secure it?
 24.	Explain IAM roles and policies.
 25.	How to set up CI/CD pipeline (Jenkins / GitHub Actions)?
 ________________________________________
-E. Application Support / Production (5)
+**E. Application Support / Production (5)**
+
 26.	How to debug production issues?
 27.	Explain incident management process.
 28.	Monitoring & logging tools you have used.
