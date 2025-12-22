@@ -638,6 +638,124 @@ Here’s how you can apply the **STAR method** to explain your experience with *
 
 ---
 
+## What “transactional behavior” means in Spring Boot
+
+Transactional behavior ensures that **a group of database operations either all succeed or all fail together**.
+If any step fails, Spring **rolls back** all previous changes to keep data consistent.
+
+Spring Boot mainly uses the `@Transactional` annotation for this.
+
+---
+
+## Real-world example: Order placement
+
+**Scenario**
+A user places an order. The system must:
+
+1. Save the order
+2. Deduct product stock
+3. Record payment
+
+If **any step fails**, nothing should be saved.
+
+---
+
+## Service-layer transactional example
+
+### OrderService
+
+```java
+@Service
+public class OrderService {
+
+    private final OrderRepository orderRepository;
+    private final ProductRepository productRepository;
+    private final PaymentRepository paymentRepository;
+
+    public OrderService(OrderRepository orderRepository,
+                        ProductRepository productRepository,
+                        PaymentRepository paymentRepository) {
+        this.orderRepository = orderRepository;
+        this.productRepository = productRepository;
+        this.paymentRepository = paymentRepository;
+    }
+
+    @Transactional
+    public void placeOrder(Order order, Long productId, Payment payment) {
+
+        // 1. Save order
+        orderRepository.save(order);
+
+        // 2. Update product stock
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new RuntimeException("Product not found"));
+
+        if (product.getStock() <= 0) {
+            throw new RuntimeException("Out of stock");
+        }
+
+        product.setStock(product.getStock() - 1);
+        productRepository.save(product);
+
+        // 3. Save payment
+        paymentRepository.save(payment);
+    }
+}
+```
+
+---
+
+## What happens behind the scenes
+
+* Spring **starts a transaction** when `placeOrder()` is called
+* All database operations run inside the same transaction
+* If a `RuntimeException` occurs:
+
+  * ❌ Order is not saved
+  * ❌ Stock is not updated
+  * ❌ Payment is not recorded
+* If no exception occurs:
+
+  * ✅ All changes are committed together
+
+---
+
+## Example rollback scenario
+
+```java
+if (product.getStock() <= 0) {
+    throw new RuntimeException("Out of stock");
+}
+```
+
+➡ This exception causes Spring to **automatically roll back** the entire transaction.
+
+---
+
+## Common transactional options
+
+```java
+@Transactional(
+    rollbackFor = Exception.class,
+    readOnly = false,
+    propagation = Propagation.REQUIRED
+)
+```
+
+* `rollbackFor` → roll back for checked exceptions
+* `readOnly` → improves performance for read-only operations
+* `propagation` → controls transaction behavior across method calls
+
+---
+
+## Best practices
+
+* ✅ Use `@Transactional` at the **service layer**
+* ❌ Avoid placing it on controllers
+* ❌ Don’t call a `@Transactional` method from the same class (self-invocation issue)
+* ✅ Keep transactions short
+
+---
 
 
 
