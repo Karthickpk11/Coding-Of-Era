@@ -595,6 +595,49 @@ I was responsible for:
 
 ---
 
+Here’s how you can apply the **STAR method** to explain your experience with **transactional behavior in Spring Boot**:
+
+### **1. Situation**: Describe the context and the problem you're facing related to transactions.
+
+* Example: *"In a previous project, I was developing a Spring Boot application for an e-commerce platform that allowed users to place orders and make payments. The system needed to ensure that the payment was processed only if the order was successfully created and the stock was updated."*
+
+### **2. Task**: What was your responsibility? What needed to be done to manage the transaction?
+
+* Example: *"My task was to ensure that the database changes for order creation, payment processing, and stock management were all handled atomically. If any part of the process failed (like payment failure or stock being unavailable), the entire transaction should be rolled back to maintain consistency."*
+
+### **3. Action**: What steps did you take to implement transactional behavior using Spring Boot?
+
+* Example: *"I used Spring's `@Transactional` annotation to ensure that the operations for order creation, payment processing, and stock management were part of a single transaction. I applied `@Transactional` at the service layer to make sure the entire business logic was executed within a single transactional context. For example, I wrapped the order placement and payment logic in a single method, which would either complete all operations or roll back if any part of the process failed."*
+
+  ```java
+  @Transactional
+  public void placeOrder(Order order, Payment payment) {
+      // 1. Create the order
+      orderRepository.save(order);
+      
+      // 2. Process the payment
+      paymentService.processPayment(payment);
+      
+      // 3. Update stock
+      stockService.updateStock(order.getItems());
+  }
+  ```
+
+* *"I also made sure to handle exceptions properly, so if a `RuntimeException` occurred at any point during the transaction, Spring would automatically roll back the transaction to prevent partial updates to the database."*
+
+### **4. Result**: What was the outcome of implementing transactional behavior?
+
+* Example: *"As a result, the application ensured data consistency across multiple operations. If the payment failed or the stock wasn’t available, the order would not be placed, and no payment would be processed. This behavior reduced errors and improved user experience by preventing partial transactions from being committed to the database. Additionally, I received positive feedback from the QA team, who praised the consistency of the data and the reliability of the transactions."*
+
+### Full Example:
+
+* **Situation**: *In a Spring Boot project for an e-commerce platform, I needed to ensure that order creation, payment processing, and stock updates were all managed within a single transaction to avoid inconsistencies.*
+* **Task**: *My task was to implement transactional behavior such that if one part of the process failed (like a payment issue), the entire transaction would roll back and leave the database in a consistent state.*
+* **Action**: *I used Spring Boot’s `@Transactional` annotation at the service layer to ensure the order placement, payment processing, and stock updates happened atomically. I wrote a method that handled all these steps and made sure to handle exceptions to trigger a rollback if any step failed.*
+* **Result**: *This resulted in more reliable transactions, better consistency in the system, and a smoother experience for both users and the development team. No partial orders were created, and the system was able to maintain correct stock levels.*
+
+---
+
 
 
 
