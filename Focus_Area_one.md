@@ -595,7 +595,7 @@ I was responsible for:
 
 ---
 
-Here’s how you can apply the **STAR method** to explain your experience with **transactional behavior in Spring Boot**:
+## ⭐ STAR Example **transactional behavior in Spring Boot**:
 
 ### **1. Situation**: Describe the context and the problem you're facing related to transactions.
 
