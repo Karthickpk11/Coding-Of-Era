@@ -131,8 +131,6 @@ I needed to maintain high code quality while delivering features quickly.
 
 Here are **strong STAR-method answers specifically for Spring Boot Web Application *deployment***.
 
----
-
 ## ⭐ STAR Example 1
 
 ### **“Describe how you deployed a Spring Boot web application.”**
@@ -286,8 +284,6 @@ These are written to match **Sin regulated-environment expectations**: **securit
 
 You can use these **almost verbatim** in interviews.
 
----
-
 # ⭐ STAR – Bank / FinTech / GovTech (Spring Boot Deployment)
 
 ## 1️⃣ **Deploying a Spring Boot application in a regulated environment**
@@ -408,12 +404,9 @@ I needed to automate deployments while maintaining governance controls.
 
 ---
 
----
 **AWS:**
 
 Here’s a **bank/fintech/GovTech–ready STAR method answer** for an **AWS Mobile/Web application interview question**.
-
----
 
 ## ⭐ STAR Example 1
 
@@ -505,12 +498,9 @@ I needed to **secure the AWS environment** against unauthorized access and data 
 
 ---
 
----
 **Spring Boot backend, AWS deployment, mobile/web frontend, and blue-green deployment**.
 
 This answer emphasizes **MAS TRM compliance, zero downtime, security, and scalability**.
-
----
 
 # ⭐ STAR – Full-Stack Spring Boot + AWS Mobile/Web Application (Blue-Green)
 
@@ -702,8 +692,6 @@ public class OrderService {
     }
 }
 ```
-
----
 
 ## What happens behind the scenes
 
