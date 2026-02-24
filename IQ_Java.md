@@ -57,7 +57,60 @@ while(val > 0){ //iterating 3 times
 }
 System.out.println("reverse :: " + reverse);
 ```
+# 5. Find first missingPositiveNumber
+```
+int[] numbers = {1, 2, 6, 4, 1, 2};
 
+// 1. Remove the duplicate elements in list using Set interface.
+Set<Integer> findPositiveNumber = new HashSet<>();
+
+// 2. Iterate the Array to store each value in Set object.
+for (Integer i:numbers) {
+    findPositiveNumber.add(i);
+}
+
+// 3. declare the variable is missingPositiveNumber with assign the value is 1.
+int missingPositiveNumber = 1;
+
+// 4. while condition apply to check the missingPositiveNumber is present in the Set object.
+// If yes than increment the value in missingPositiveNumber
+while(findPositiveNumber.contains(missingPositiveNumber)){
+    missingPositiveNumber += 1;
+}
+
+System.out.println(findPositiveNumber);
+// 5. finally print the result.
+System.out.println("Find first missingPositiveNumber" +missingPositiveNumber);
+```
+# 6. Print Fibonacci series using recursion
+```
+public static int fibonaci(int n){
+    if (n <= 1){
+        return n;
+    }
+    return fibonaci(n-1) + fibonaci(n-2);
+}
+
+public static void main(String[] args) {
+    int n = 10;
+
+    for(int i=0;i<n;i++){
+        System.out.print(fibonaci(i) + " ");
+    }
+}
+```
+# 7. Fruits calculation
+# Fruits shop has 2 banana - (each rs 15), 5 water melon - (each RS 40), 10 orange - (each rs 50), Again added 3 banana - (each rs 25)
+```
+Map<String, List<FruitsBean>> fruitsCost = new HashMap<>();
+fruitsCost.put("watermelon", Arrays.asList(new FruitsBean("watermelon", 5, 40)));
+fruitsCost.put("orange", Arrays.asList(new FruitsBean("orange", 10, 50)));
+fruitsCost.computeIfAbsent("banana", k -> new ArrayList<>()).add(new FruitsBean("banana", 2, 15));
+fruitsCost.computeIfAbsent("banana", k ->  new ArrayList<>()).add(new FruitsBean("banana", 3, 25));
+List<FruitsBean> result = fruitsCost.values().stream().flatMap(List::stream).collect(Collectors.toList());
+Map<String, Integer> finalres = result.stream().collect(Collectors.toMap(FruitsBean::getName, val -> val.getItems() * val.getPrice(), (r1,r2) -> r2 ));
+System.out.println(finalres);
+```
 
 
 
