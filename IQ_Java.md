@@ -99,8 +99,8 @@ public static void main(String[] args) {
     }
 }
 ```
-# 7. Fruits calculation
-# Fruits shop has 2 banana - (each rs 15), 5 water melon - (each RS 40), 10 orange - (each rs 50), Again added 3 banana - (each rs 25)
+# 7. Fruits Shop calculation
+# Fruits shop has 2 banana - (each rs 15), 5 water melon - (each RS 40), 10 orange - (each rs 50), Sold 2 banana and again added 3 banana - (each rs 25)
 ```
 Map<String, List<FruitsBean>> fruitsCost = new HashMap<>();
 fruitsCost.put("watermelon", Arrays.asList(new FruitsBean("watermelon", 5, 40)));
@@ -110,6 +110,21 @@ fruitsCost.computeIfAbsent("banana", k ->  new ArrayList<>()).add(new FruitsBean
 List<FruitsBean> result = fruitsCost.values().stream().flatMap(List::stream).collect(Collectors.toList());
 Map<String, Integer> finalres = result.stream().collect(Collectors.toMap(FruitsBean::getName, val -> val.getItems() * val.getPrice(), (r1,r2) -> r2 ));
 System.out.println(finalres);
+```
+# 8. Create 10 Train object with 1 hour plus timezone.
+```
+LocalDateTime localDateTime = LocalDateTime.now();
+for(int i=1;i<= 10;i++){
+    localDateTime = localDateTime.plusHours(1);
+    Instant instant = localDateTime.atZone(ZoneId.systemDefault()).toInstant();
+    Train train = new Train("Train" + i, Date.from(instant));
+    System.out.println("Object created: Train Name: "+ train.getName() + ", Departure Time: " + train.getDepatureTime());
+}
+public class Train {
+    String name;
+    Date depatureTime;
+    // _constructor, getter method_
+}
 ```
 
 
