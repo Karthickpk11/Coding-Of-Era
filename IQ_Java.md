@@ -1,7 +1,7 @@
 # **Java Basic Code Interview**  
 
 # 1. Anagram
-```
+```java
 String s1 = "listen";
 String s2 = "silent";
 
