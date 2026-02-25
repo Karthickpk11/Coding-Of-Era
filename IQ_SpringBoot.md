@@ -193,6 +193,7 @@ public class AppConfig {
 ---
 ---
 #  4. Life Cycle of Spring Bean    
+Spring Bean lifecycle includes instantiation, dependency injection, aware callbacks, pre-initialization processing, initialization, post-initialization processing, and finally destruction callbacks when the context is closed.    
 how a bean is created, initialized, used, and destroyed inside the Spring IoC container.
 
 Complete Lifecycle Flow (Simple View):    
