@@ -2,6 +2,15 @@
 
 # 📦 Layer Visualization
 
+```dockerfile
+FROM node:18
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm install
+
+CMD ["node", "app.js"]
+```
 ```
 Layer 1 → Base image (Node)
 Layer 2 → WORKDIR
