@@ -1,4 +1,4 @@
-# 🔹 What is Dependency Injection?
+# 1. What is Dependency Injection?
 
 Dependency Injection is a design pattern where:
 
@@ -10,15 +10,11 @@ This promotes:
 * Loose coupling
 * Easier testing
 * Better maintainability
-
 ---
+#  2. How many Ways to Implement Dependency Injection in Spring Boot
 
-# 🔹 Ways to Implement Dependency Injection in Spring Boot
-
-Spring Boot supports **three main types** of dependency injection:
-
+Spring Boot supports **three main types** of dependency injection:    
 ---
-
 ## 1️⃣ Constructor Injection (Recommended ✅)
 
 Dependencies are injected through the class constructor.
@@ -117,7 +113,7 @@ public class OrderService {
 
 ---
 
-# 🔹 Annotation-Based Injection
+# 3. What are annotation-Based Injection
 
 Spring Boot commonly uses:
 
