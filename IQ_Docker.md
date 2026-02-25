@@ -1,16 +1,19 @@
 
-
-# 📦 Layer Visualization
-
+# Docker Image Layers
+Docker images are built in layers.
+Each instruction creates a new layer.
 ```dockerfile
 FROM node:18
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json ./ (Recommended)
 RUN npm install
 
 CMD ["node", "app.js"]
 ```
+
+# 📦 Layer Visualization
+
 ```
 Layer 1 → Base image (Node)
 Layer 2 → WORKDIR
@@ -32,6 +35,8 @@ Key Interview Concepts
 
 | Instruction | Purpose                            |
 | ----------- | ---------------------------------- |
+| `EXPOSE`    | Dockerfile instruction that documents which network ports a container listens on at runtime.|
+| `ENTRYPOINT`| defines the main command that always runs when a container starts. |
 | `WORKDIR`   | Sets working directory             |
 | `COPY`      | Copies files (preferred)           |
 | `ADD`       | Copy + extract + URL support       |
