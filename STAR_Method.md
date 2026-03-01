@@ -105,6 +105,26 @@
 
 ---
 
+## **STAR Example 6 – A person Booking a movie ticket via mobile app but the payments not done due to payment service down.**
+
+* **S (Situation):** A customer attempts to book a movie ticket through a mobile app, but the payment fails because the payment service is down, causing frustration and an incomplete transaction. The user is unsure whether they’ve successfully booked the ticket or if they need to try again.  
+* **T (Task):**: The task is to resolve the payment failure, either by allowing the customer to complete the payment, notifying them about the service downtime, or offering an alternative solution to ensure a smooth booking experience and maintain customer satisfaction.
+* **A (Action):**:
+  1. **Assess the Problem:** First, identify if the payment failure is related to an issue with the payment service or the user's connection.
+  2. **Notify the User:** Once it's confirmed that the payment service is down, inform the user with a clear message, e.g., "We're currently experiencing issues with our payment service. Please try again later."
+  3. **Offer Alternatives:** If possible, provide other payment options (e.g., Google Pay, PayPal, or credit card) so the user can complete the transaction while the primary payment service is down.
+  4. **Retry Mechanism:** Set up an automatic retry system in the app to process the payment once the payment gateway is restored.
+  5. **Offer “Pay Later” Option:** Allow the user to reserve the ticket without immediate payment. They can complete the payment once the issue is resolved.
+  6. **Provide Support Contact:** If the issue persists, provide users with customer support contact options (live chat, email, or phone support) so they can get immediate help.
+  7. **Post-Resolution Follow-up:** Once the issue is resolved, send notifications to affected users, offering them the chance to complete their payment or receive assistance.
+* **R (Result):**:
+  1. **Customer Retention:** Users are informed of the issue and feel supported, which prevents frustration and abandonment.
+  2. **Smooth Booking Process:** By offering alternatives like "Pay Later" or multiple payment options, customers are able to complete their booking without delay.
+  3. **Positive Customer Experience:** The transparent communication and proactive solutions improve the customer's trust in the app and brand, leading to increased customer loyalty.
+  4. **Operational Efficiency:** The automatic retry mechanism reduces the need for manual intervention and ensures that the payment process is completed once the issue is resolved.
+ 
+---
+
 💡 **Pro Tips for STAR Use:**
 
 1. Always **quantify results** (%, time saved, revenue impact).
