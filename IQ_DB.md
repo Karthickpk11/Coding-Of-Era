@@ -220,8 +220,6 @@ Select dept_name, count(*) from departments dept
 LEFT JOIN employers emp ON dept.employer_id = emp.employer_id Group By dept.dept_id;
 ```
 
----
-
 Find the depart count for each user?
 
 ```sql
@@ -230,14 +228,10 @@ Select employer_name, count(*) from employers emp
 LEFT JOIN departments dep ON emp.employer_id = dep.employer_id Group By emp.employer_id;
 ```
 
----
-
 How to add new columns in the tables?
 ```sql
 ALTER TABLE employers ADD salary INT;
 ```
-
----
 
 How to Update value in new columns in the tables?
 ```sql
@@ -249,7 +243,7 @@ This increases salary by 5000 for condition base
 Update employers SET  salary = salary + 5000 where employer_id = 2;
 ```
 
-HOw to view the index in POstgreSQL?
+How to view the index in POstgreSQL?
 ```sql
 SELECT indexname, indexdef FROM pg_indexes WHERE tablename = 'employers';
 ```
