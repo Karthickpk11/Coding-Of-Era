@@ -244,4 +244,11 @@ How to Update value in new columns in the tables?
 Update employers SET  salary = 12000 where employer_id = 2;
 ```
 
+This increases salary by 5000 for condition base
+```sql
+Update employers SET  salary = salary + 5000 where employer_id = 2;
+```
+
+
+
 ---
