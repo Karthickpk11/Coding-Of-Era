@@ -215,7 +215,20 @@ An index:
 Find the user count for each department?
 
 ```sql
+-- GROUP By Department(dept_id)
+Select dept_name, count(*) from departments dept 
+LEFT JOIN employers emp ON dept.employer_id = emp.employer_id Group By dept.dept_id;
+```
+
+---
+
+Find the depart count for each user?
+
+```sql
 -- Group By User(employer_id)
 Select employer_name, count(*) from employers emp 
 LEFT JOIN departments dep ON emp.employer_id = dep.employer_id Group By emp.employer_id;
 ```
+
+---
+
