@@ -343,7 +343,7 @@ ALTER TABLE Employees_NoDuplicates RENAME TO Employees;
 5. **Use Proper Indexing**: Ensure that the database tables are indexed properly for frequently queried columns.        
 
 # Why should we use bind variables?
-```
+
 Bind variables improve SQL performance by allowing the database to reuse execution plans, reduce parsing overhead, and protect applications from SQL injection attacks.
-```
+
 ---
