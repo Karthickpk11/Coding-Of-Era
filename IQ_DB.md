@@ -249,4 +249,25 @@ SELECT indexname, indexdef FROM pg_indexes WHERE tablename = 'employers';
 ```
 <img width="811" height="97" alt="image" src="https://github.com/user-attachments/assets/6c580799-7154-4e8f-8b7b-44e132968c60" />
 
+What is correlated subquery?
+
+A correlated subquery is a subquery that references columns from the outer query. Unlike a regular subquery, which is independent and runs once, a correlated subquery is evaluated for each row processed by the outer query. This makes it dependent on the outer query. In a correlated subquery, the subquery depends on the outer query, meaning that for each row of the outer query, the inner query is executed.
+
+```sql
+SELECT column1, column2
+FROM outer_table
+WHERE column3 = (
+    SELECT column4
+    FROM inner_table
+    WHERE outer_table.column = inner_table.column
+);
+```
+# Key Points to Remember About Correlated Subqueries:
+
+* Reference to Outer Query: The subquery references columns from the outer query.
+
+* Evaluated for Each Row: The subquery is executed once for each row in the outer query.
+
+* Efficiency: Correlated subqueries can be less efficient than non-correlated subqueries, as the inner query is executed multiple times, once for each row in the outer query.
+
 ---
