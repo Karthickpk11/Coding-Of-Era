@@ -271,7 +271,7 @@ WHERE column3 = (
 * **Efficiency**: Correlated subqueries can be less efficient than non-correlated subqueries, as the inner query is executed multiple times, once for each row in the outer query.
 
 
-How to remove the duplicate row in the table?
+# How to remove the duplicate row in the table?
 
 To delete duplicate rows in an SQL table, you need to identify the rows that are duplicates and then remove them. There are different methods to do this depending on the SQL database you're using, but the general approach involves using a DELETE query with a **JOIN** or `ROW_NUMBER()` window function.
 
