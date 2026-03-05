@@ -333,5 +333,13 @@ ALTER TABLE Employees_NoDuplicates RENAME TO Employees;
 * **`ROW_NUMBER()`** is the most efficient and modern way to handle this in databases that support it (PostgreSQL, SQL Server, MySQL 8.0+).
 * **`JOIN` method** is more widely compatible but can be less efficient for larger tables.
 * **`DISTINCT` and `GROUP BY`** are useful for creating a new table without duplicates, but may not preserve all original data if there are other columns you want to keep.
-  
+
+# How would you optimize the performance of PL/SQL code?
+
+1. Use `BULK COLLECT` and `FORALL`: Instead of fetching rows one by one, fetch them in bulk.
+2. Avoid Using Cursors Inside Loops: Try to minimize the use of cursors within loops. Instead, fetch data once and process it.
+3. Use Bind Variables: Using bind variables in SQL queries instead of literals can help in reusing execution plans and improving performance.
+4. Limit the Data Retrieved: Avoid unnecessary data retrieval. Always filter data by using appropriate `WHERE` clauses.
+5. Use Proper Indexing: Ensure that the database tables are indexed properly for frequently queried columns.        
+
 ---
