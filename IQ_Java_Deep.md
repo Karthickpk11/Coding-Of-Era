@@ -31,16 +31,6 @@ The class loading process has **three main phases**:
 
 The **ClassLoader reads the `.class` file** and creates a `Class` object in memory.
 
-Example source:
-
-* File system
-* JAR files
-* Network
-* Database
-* Generated dynamically
-
----
-
 ### 2️⃣ Linking
 
 Linking has **three steps**:
@@ -50,8 +40,7 @@ Linking has **three steps**:
 * Ensures bytecode is **valid and secure**
 * Prevents illegal operations
 
-Example:
-
+Example:    
 * Stack overflow
 * Invalid bytecode
 
@@ -60,33 +49,11 @@ Example:
 * Allocates **memory for static variables**
 * Initializes them with **default values**
 
-Example:
-
-```java
-static int x = 10;
-```
-
-At preparation:
-
-```
-x = 0
-```
-
----
-
 **c. Resolution**
 
 * Converts **symbolic references → direct references**
 
-Example:
-
-```
-java/lang/Object
-```
-
 becomes a real memory reference.
-
----
 
 ### 3️⃣ Initialization
 
@@ -101,13 +68,6 @@ static {
     System.out.println("Class initialized");
 }
 ```
-
-Now:
-
-```
-x = 10
-```
-
 ---
 
 ## 3. Types of ClassLoaders in Java
@@ -125,40 +85,17 @@ Examples:
 * `java.lang.Object`
 * `java.util.*`
 
-Location:
-
-```
-<JAVA_HOME>/lib
-```
-
----
-
 ### 2️⃣ Extension ClassLoader (Platform ClassLoader in modern Java)
 
 Loads classes from:
-
-```
-<JAVA_HOME>/lib/ext
-```
 
 Example libraries:
 
 * Java extension APIs
 
----
-
 ### 3️⃣ Application ClassLoader
 
-Loads classes from the **application classpath**.
-
-Example:
-
-```
--target/classes
-.jar files
-CLASSPATH
-```
-
+Loads classes from the **application classpath**.    
 This loader loads **your project classes**.
 
 ---
